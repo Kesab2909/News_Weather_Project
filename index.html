@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="container flex">
+            <a href="#" onclick="reload()" class="logo">News & Weather</a>
+            <div class="nav-links">
+                <ul class="flex">
+                    <li onclick="fetchNews('IPL')">IPL</li>
+                    <li onclick="fetchNews('Finance')">Finance</li>
+                    <li onclick="fetchNews('Politics')">Politics</li>
+                </ul>
+            </div>
+            <div class="search-bar flex">
+                <input id="search-text" type="text" placeholder="Search news...">
+                <button id="search-button">Search</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <!-- News Section -->
+        <div class="news-container">
+            <div id="cards-container"></div>
+        </div>
+
+        <!-- Weather Section -->
+        <div class="weather-box">
+            <h3>🌤 Weather Now</h3>
+            <input type="text" id="city" placeholder="Enter city">
+            <button onclick="fetchWeather()">Check</button>
+            
+            <div id="weather-result">
+                <h4 id="temperature"></h4>
+                <p id="feels-like"></p>
+                <p id="humidity"></p>
+                <p id="weather"></p>
+                <p id="wind-speed"></p>
+                <p id="sunrise"></p>
+                <p id="sunset"></p>
+            </div>
+        </div>
+    </div>
+
+    <template id="template-news-card">
+        <div class="card">
+            <img id="news-img" src="" alt="News Image">
+            <h3 id="news-title"></h3>
+            <p id="news-desc"></p>
+            <h5 id="news-source"></h5>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
